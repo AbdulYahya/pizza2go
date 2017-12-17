@@ -12,7 +12,7 @@
     <script src="assets/js/scripts.js"></script>
   </head>
   <body>
-    <div class="container">
+    <div class="container order-pg">
       <header class="header clearfix">
         <nav>
           <ul class="nav nav-pills float-right">
@@ -36,7 +36,112 @@
         </nav>
       </header>
       <main role="main">
+        <div class="row">
+          <div class="col-md-8">
+            <div class="jumbotron">
+              <h4 class="display-4 text-left mb-3">Order</h4>
+              <div class="card">
+                <p class="card-header text-left">Please fill the form below</p>
+                <div class="card-body">
+                  <form id="createAPizza">
+                    <div class="row">
+                      <div class="col-md-6 mb-3">
+                        <label for="fName">First name</label>
+                        <input type="text" class="form-control" id="fName" placeholder="First name" required>
+                      </div>
+                      <div class="col-md-6 mb-3">
+                        <label for="lName">Last name</label>
+                        <input type="text" class="form-control" id="lName" placeholder="Last name" required>
+                      </div>
+                    </div>
+                    <h3 class="text-left mt-4">Pizza</h3>
+                    <hr class="my-4" />
+                    <div class="row">
+                      <!-- <div class="col-md-6 mb-3">
+                        <label for="quantity">Quantity</label>
+                        <input type="number" class="form-control" id="quantity" placeholder="4" required>
+                      </div> -->
+                      <div class="col-md-12 mb-3">
+                        <div class="card">
+                          <div class="card-body">
+                            <h4 class="text-left pb-3">Size</h4>
+                            <div class="card-text">
+                              <select id="pizzaSize" class="form-control">
+                                <option selected>Choose...</option>
+                                <option value="small">Small</option>
+                                <option value="medium">Medium</option>
+                                <option value="large">Large</option>
+                              </select>
+                            </div>
 
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="card">
+                          <div class="card-body">
+                            <h4 class="text-left pb-3">Toppings</h4>
+                            <div class="card-text">
+                              <div class="row" id="toppingsRadioButtons">
+                                <div class="col-md-3 mb-3">
+                                  <label class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" name="topping" value="olives">
+                                    <span class="custom-control-indicator"></span>
+                                    <span class="text-muted">Olives</span>
+                                  </label>
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                  <label class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" name="topping" value="greenBellPeppers">
+                                    <span class="custom-control-indicator"></span>
+                                    <span class="text-muted">Green Bell Peppers</span>
+                                  </label>
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                  <label class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" name="topping" value="anchovies">
+                                    <span class="custom-control-indicator"></span>
+                                    <span class="text-muted">Anchovies</span>
+                                  </label>
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                  <label class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" name="topping" value="onions">
+                                    <span class="custom-control-indicator"></span>
+                                    <span class="text-muted">Onions</span>
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-4" >Order Pizza</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card">
+              <h4 class="card-header">Order Confirmation</h4>
+              <div class="card-body">
+                <div class="card-text">
+                  <ul class="list-group" id="orderConfirmation">
+                    
+                  </ul>
+                </div>
+              </div>
+              <div class="card-footer alert-success">
+                <p class="">Total:  <span class="float-right" id="orderTotal"></span></p>
+              </div>
+            </div>
+          </div>
+        </div>
       </main>
       <footer class="footer">
         <p class="text-muted">© 2017 Samwise Gamgee</p>

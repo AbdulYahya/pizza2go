@@ -1,11 +1,18 @@
 html, body {
   height: 100%;
 }
+
 body {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 }
 
+h3 {
+  font-weight: 300;
+}
+h4 {
+  font-weight: 200;
+}
 /* Main Page Styling */
 .header,
 .marketing,
@@ -66,7 +73,7 @@ body {
   .container {
     max-width: 50rem;
   }
-  .ordrContainer {
+  .order-pg {
     max-width: 65rem;
   }
 }
