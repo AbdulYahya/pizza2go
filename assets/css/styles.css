@@ -1,0 +1,87 @@
+html, body {
+  height: 100%;
+}
+body {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+/* Main Page Styling */
+.header,
+.marketing,
+.footer {
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+.header {
+  padding-bottom: 1rem;
+  border-bottom: .05rem solid #e5e5e5;
+}
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 3rem;
+}
+.footer {
+  padding-top: 1.5rem;
+  color: #777;
+  border-top: .05rem solid #e5e5e5;
+}
+.navbar-brand {
+  color: #868e96!important;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+  padding-top: 0rem;
+}
+.container-narrow > hr {
+  margin: 2rem 0;
+}
+.jumbotron {
+  text-align: center;
+  border-bottom: .05rem solid #e5e5e5;
+}
+.jumbotron .btn {
+  padding: .75rem 1.5rem;
+  font-size: 1.5rem;
+}
+
+.jumbotron {
+  padding-bottom: 1.5rem;
+}
+
+.marketing {
+  margin: 3rem 0;
+}
+.marketing p + h4 {
+  margin-top: 1.5rem;
+}
+
+.about {
+  margin-bottom: 0rem;
+}
+
+/*  Custom Media Queries */
+@media (min-width: 48em) {
+  .container {
+    max-width: 50rem;
+  }
+  .ordrContainer {
+    max-width: 65rem;
+  }
+}
+
+@media screen and (min-width: 48em) {
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 2rem;
+  }
+}
