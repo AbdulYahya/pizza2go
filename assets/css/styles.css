@@ -6,12 +6,21 @@ body {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 }
+h2 {
+  font-weight: 200;
 
+}
 h3 {
   font-weight: 300;
 }
 h4 {
   font-weight: 200;
+}
+.line-up {
+  margin-top: 3.9rem;
+}
+.card-footer, .alert-success {
+  padding: 0.75rem 0 0 1.25rem;
 }
 /* Main Page Styling */
 .header,
@@ -52,11 +61,15 @@ h4 {
   padding: .75rem 1.5rem;
   font-size: 1.5rem;
 }
-
 .jumbotron {
-  padding-bottom: 1.5rem;
+  /* padding-bottom: 1.5rem; */
 }
 
+.jumbotron, .spec {
+  background-color: #fff;
+  padding: 0rem 0rem 1.5rem 0rem;
+  border-bottom: none;
+}
 .marketing {
   margin: 3rem 0;
 }
@@ -74,7 +87,7 @@ h4 {
     max-width: 50rem;
   }
   .order-pg {
-    max-width: 65rem;
+    max-width: 60rem;
   }
 }
 
