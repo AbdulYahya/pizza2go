@@ -1,65 +1,60 @@
 'use strict';
 // Global Variables
-var toppings = [];
+// var toppings = [];
 
 // Business Logic
+function Capitalize(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+}
+function formReset(form) {
+  form.reset();
+}
+
 function Pizza(size, toppings) {
   this.size = size;
   this.toppings = toppings;
-  this.basePrice = 7.95;
+  this.baseCost = 7.95;
+  this.baseToppingCost = 0.75;
 }
 
 Pizza.prototype.Cost = function() {
   if (this.size == 'medium')
-    this.basePrice += 2;
+    this.baseCost += 2;
   else if (this.size == 'large')
-    this.basePrice += 5;
+    this.baseCost += 5;
   else
-    this.basePrice;
+    this.baseCost;
 
   for (var i = 0; i < this.toppings.length; i++) {
     if (this.toppings[i])
-      this.basePrice += 0.75;
+      this.baseCost += this.baseToppingCost;
   }
 }
 
 // User Interface Logic
-function grabToppings() {
-  $('input:checkbox[name=topping]').change(function(event) {
-    var eventTarget = $(event.target);
-    var checkboxInput = eventTarget.find('input');
-    var checkboxValue = eventTarget.attr('value');
-    var index;
-
-    if ((index = toppings.indexOf(checkboxValue)) > -1) {
-      toppings.splice(index, 1);
-      setTimeout(function() { checkboxInput.prop('checked', false) }, 0);
-    } else {
-      toppings.push(checkboxValue);
-      setTimeout(function() { checkboxInput.prop('checked', true) }, 0);
-    }
-
-    if (checkboxValue == 'olives') {
-      $('#orderConfirmation').append('<li class="list-group-item">' + checkboxValue + '</li>');
-    }
-    // console.log(toppings);
-  });
-  return toppings;
-}
-
 function pizzaBuilder() {
   var pizzaBuilder = document.getElementById('pizzaBuilder');
 
   pizzaBuilder.addEventListener('submit', function(event) {
     var size = $('#pizzaSize').val();
+    var toppings = [];
     var newPizza = new Pizza(size, toppings);
-    newPizza.Cost()
-    console.log(size);
-    console.log(newPizza.basePrice.toFixed(2));
 
+  // $('input:checkbox[name=topping]:checked').parent().find('span.text-muted').text() *** Checkbox Text value ***
+    // If toppings are checked push to toppings array
+    // Do not need global toppings array using this method
+    $('input:checkbox[name=topping]:checked').each(function() {
+      toppings.push($(this).val());
+       $('#orderConfirmation').append('<li class="list-group-item">' + Capitalize($(this).val())  + ' <span class="badge-pill badge-info float-right">$ ' + newPizza.baseToppingCost + '</span></li>');
+    });
+
+    // newPizza.Cost()
+    // toppings = [];
+
+    formReset(pizzaBuilder);
     event.preventDefault();
     event.stopPropagation();
-  }, grabToppings());
+  });
 }
 
 $(function () {
