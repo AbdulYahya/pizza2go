@@ -6,16 +6,13 @@ body {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 }
-h2 {
+h2, h4 {
   font-weight: 200;
-
 }
 h3 {
   font-weight: 300;
 }
-h4 {
-  font-weight: 200;
-}
+
 .line-up {
   margin-top: 3.9rem;
 }
@@ -23,7 +20,6 @@ h4 {
   border-bottom: none;
 }
 
-/* Main Page Styling */
 .header,
 .marketing,
 .footer {
@@ -63,10 +59,10 @@ h4 {
   font-size: 1.5rem;
 }
 .jumbotron {
-  /* padding-bottom: 1.5rem; */
+  padding-bottom: 1.5rem;
 }
 
-.jumbotron, .spec {
+.spec {
   background-color: #fff;
   padding: 0rem 0rem 1.5rem 0rem;
   border-bottom: none;
@@ -82,7 +78,6 @@ h4 {
   margin-bottom: 0rem;
 }
 
-/*  Custom Media Queries */
 @media (min-width: 48em) {
   .container {
     max-width: 50rem;
@@ -93,15 +88,12 @@ h4 {
 }
 
 @media screen and (min-width: 48em) {
-  /* Remove the padding we set earlier */
   .header,
   .marketing,
   .footer {
     padding-right: 0;
     padding-left: 0;
   }
-
-  /* Space out the masthead */
   .header {
     margin-bottom: 2rem;
   }
